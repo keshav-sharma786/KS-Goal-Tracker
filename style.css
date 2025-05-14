@@ -1,0 +1,258 @@
+body {
+  background-color: #06170e;
+}
+
+#title {
+  color: wheat;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.container {
+  height: 2000px;
+  width: 900px;
+  background-color: #984d4d;
+  margin: auto;
+  border-radius: 30px;
+  /* new part */
+  position: relative;
+  overflow: visible;
+  border: 5px solid #33160a;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* glitter effect */
+.glitter {
+  color: #fff;
+  position: relative;
+}
+
+.glitter::after,
+.glitter::before {
+  content: "";
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  position: absolute;
+  top: -2px;
+  border-radius: 20px;
+  left: -2px;
+  z-index: -1;
+  animation: animated-shadow 15s linear infinite alternate;
+}
+
+.glitter::after {
+  filter: blur(30px);
+}
+
+@keyframes animated-shadow {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.todaySun {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 40px;
+}
+
+.todaySun span,
+img {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.todaySun span {
+  margin-left: 20px;
+}
+
+.todaySun span h1 {
+  font-family: sans-serif;
+  color: #33160a;
+}
+
+.todaySun img {
+  height: 120px;
+  width: 120px;
+  border-radius: 20px;
+}
+
+.progress-label {
+  font-family: sans-serif;
+  font-size: 20px;
+  color: black;
+  margin-left: 65px;
+}
+
+.progress-bar {
+  height: 30px;
+  width: 85%;
+  background-color: #33160a;
+  margin: auto;
+  border-radius: 30px;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: wheat;
+  /* border: 1px solid #33160a; */
+  border-radius: 30px;
+}
+
+.error-lable {
+  margin-left: 70px;
+  font-family: cursive;
+  font-size: 18px;
+  font-weight: 600;
+  color: maroon;
+  opacity: 0;
+}
+
+.goal-container {
+  /* background-color: white; */
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.custom-checkbox {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  border: 6px solid #33160a;
+}
+
+#first {
+  height: 150px;
+  width: 75%;
+  border-radius: 20px;
+  margin-left: 20px;
+  border: 6px solid #33160a;
+  font-size: 25px;
+  font-weight: 600;
+  color: #33160a;
+  font-family: sans-serif;
+}
+
+#first::placeholder {
+  font-size: 25px;
+  font-family: sans-serif;
+  opacity: 0.7;
+}
+
+#ending {
+  color: black;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+#love {
+  color: black;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+
+.containers {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  
+}
+
+button {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #33160a;
+  border-radius: 10px;
+  border: 5px solid #33160a;
+}
+
+/* ok so now let us make our web application responsive as well */
+
+@media screen and (max-width: 450px) {
+  /* 450px or smaller */
+
+  body {
+    font-family: sans-serif;
+  }
+  .container {
+    width: 300px;
+    height: 1600px;
+  }
+
+  .goal-container {
+    height: 10px;
+    width: 290px;
+    margin-top: 60px;
+    margin-right: 1rem;
+    
+  }
+
+  #ending {
+    margin-top: 50px;
+    font-family: sans-serif;
+  }
+
+  #title {
+    font-family: sans-serif;
+  }
+
+  #first {
+    font-family: sans-serif;
+  }
+
+  #first::placeholder {
+    font-family: sans-serif;
+  }
+
+  #love {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1200px) {
+    body {
+      font-family: sans-serif;
+    }
+    .container {
+      width: 700px;
+    }
+}
+
